@@ -1,0 +1,44 @@
+// Controll variables
+$load-fonts: true;
+
+// Colors
+// $color-site-background:   #fefff7;
+$color-site-background:   #ffffff;
+// $color-logo:          #ff3a00;
+// $color-logo:          #f95a00;
+$color-logo:          #fd4b2b; // <--- This
+// $color-logo:          #e64332;
+// $color-logo:          #201d1d;
+$color-body:              #35352e;
+$color-footer-background: $color-body;
+$color-header-background: $color-body;
+$color-heart-red:         #dd1144;
+$color-body-border:       $color-logo;
+
+// Fonts
+// $font-body:   "Helvetica Neue", Helvetica, Arial, sans-serif;
+// $font-header: $font-body;
+
+// FB
+$font-body:   "Lucida Grande", Tahoma, Verdana, Arial, sans-serif;
+$font-header: $font-body;
+// DF
+$font-body:   Verdana, 'Bitstream Vera Sans', sans-serif;
+$font-header: $font-body;
+// Lucida
+$font-body:   "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+$font-header: $font-body;
+
+
+@if $load-fonts == true {
+  $font-body:   "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  $font-header: $font-body;
+}
+
+$font-backup-body: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+//$font-code:   "Source Code Pro", Menlo, Consolas, "Courier New", Courier, "Liberation Mono", monospace;
+$font-code:   "Source Code Pro", monospace;
+
+// Widths
+$width-body: 28.4em;
