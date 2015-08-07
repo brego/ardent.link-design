@@ -91,7 +91,7 @@ p {
 }
 
 strong, b {
-	font-weight: 700;
+	font-weight: 600;
 }
 em, i {
 	font-style: italic;
@@ -143,7 +143,7 @@ em, i {
 		.site-author {
 			font-size: .8em;
 			color: rgba(black,.4);
-			font-weight: 700;
+			font-weight: 600;
 			text-align: right;
 			display: block;
 			padding-top: .2em;
@@ -154,7 +154,20 @@ em, i {
 
 .site-main {
 	font-size: 1em;
-	line-height: 1.7;
+	line-height: 1.5em;
+
+	@media all and (max-width: 1200px) {
+		line-height: 1.5em;
+	}
+	@media all and (max-width: 973px) {
+		line-height: 1.465em;
+	}
+	@media all and (max-width: 747px) {
+		line-height: 1.435em;
+	}
+	@media all and (max-width: 520px) {
+		line-height: 1.4em;
+	}
 
 	padding: 20px 20px 40px 20px;
 	width: 100%;
@@ -166,22 +179,30 @@ em, i {
 	-webkit-flex: 1 0 auto;
 
 	p, ol, ul, h1, h2, h3, h4 {
-		padding-bottom: 1rem;
+		// padding-bottom: .5rem;
+		padding-bottom: .8334em;
+
+		font-size: .9em;
+		hyphens: auto;
 	}
 	pre, blockquote {
-		margin-bottom: 1rem;
+		// margin-bottom: .5rem;
+		margin-bottom: .8334em;
+
+		font-size: .9em;
 	}
 	h1, h2, h3, h4 {
 		font-family: $font-header;
-		font-weight: 700;
+		font-weight: 600;
 		line-height: 1;
-		padding-top: 1rem;
+		// padding-top: 1rem;
+		padding-top: .8334em;
 	}
 	h1 {
-		font-size: 1.6em;
+		font-size: 1.3em;
 	}
 	h2 {
-		font-size: 1.2em;
+		font-size: 1.1em;
 	}
 	h3 {
 		font-size: 1em;
@@ -226,7 +247,11 @@ em, i {
 	pre {
 		padding: .2em .4em .2em .4em;
 		line-height: 1.2;
-		box-shadow: inset 0 1px 1px rgba(black,.2), inset 0 -1px 1px rgba(black,.1), 0 -1px 1px #fff;
+		box-shadow:
+		    inset 0 1px 1px rgba(0, 0, 0, 0.05),
+		    inset 0 -1px 1px rgba(0, 0, 0, 0.05),
+		    0 -1px 0 #fff,
+		    0 -2px 5px rgba(0,0,0,.02);
 	}
 	pre code {
 		background-color: none;

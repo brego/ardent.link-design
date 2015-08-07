@@ -29,9 +29,10 @@ $font-header: $font-body;
 $font-body:   "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
 $font-header: $font-body;
 
-
 @if $load-fonts == true {
   $font-body:   "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  $font-header: $font-body;
+  $font-body:   "Work Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   $font-header: $font-body;
 }
 
