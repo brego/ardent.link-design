@@ -7,23 +7,27 @@
 	#{$attribute}: $solid-color;
 	#{$attribute}: $color;
 }
-	@mixin background-color($color, $background) {
-		@include rgba-color-fallback(background-color, $color, $background);
-	}
+
+@mixin background-color($color, $background) {
+	@include rgba-color-fallback(background-color, $color, $background);
+}
 
 @mixin fs($size) {
 	font-size: em($size);
 }
+
 @mixin media-max($width) {
 	@media (max-width: $width) {
 		@content;
 	}
 }
+
 @mixin media-min($width) {
 	@media (min-width: $width) {
 		@content;
 	}
 }
+
 @mixin media-min-and-max($min, $max) {
 	@media (min-width: $min) and (max-width: $max) {
 		@content;
@@ -37,11 +41,9 @@
 	$break-large: 1024px;
 	@if $media == handhelds {
 		@media only screen and (max-width: $break-small) { @content; }
-	}
-	@else if $media == medium-screens {
+	} @else if $media == medium-screens {
 		@media only screen and (min-width: $break-small + 1) and (max-width: $break-large - 1) { @content; }
-	}
-	@else if $media == wide-screens {
+	} @else if $media == wide-screens {
 		@media only screen and (min-width: $break-large) { @content; }
 	}
 }
@@ -64,7 +66,7 @@
 // @media all and (max-width:600px)  {body {font-size: 17px;}}
 // @media all and (max-width:520px)  {body {font-size: 16px;}}
 
-@mixin dynamic-font-size($min-font, $max-font, $min-width, $max-width, $element: "html") {
+@mixin dynamic-font-size($min-font, $max-font, $min-width, $max-width, $element: 'html') {
 	$steps:      strip-units($max-font) - strip-units($min-font);
 	$step-delta: strip-units($max-width) - strip-units($min-width);
 	$delta: $step-delta / $steps;
@@ -72,13 +74,6 @@
 	@media all {#{$element} {font-size: $max-font;}}
 
 	@for $i from $steps through 0 {
-		@media all and (max-width: round($max-width - ( ($steps - $i) * $delta))) {#{$element} {font-size: $max-font - ($steps - $i);}}
+		@media all and (max-width: round($max-width - (($steps - $i) * $delta))) {#{$element} {font-size: $max-font - ($steps - $i);}}
 	}
 }
-
-
-
-
-
-
-
